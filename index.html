@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Al-Waasiu Abubakari · Benchmarks, verifiers and post-training data</title>
+  <meta name="description" content="Al-Waasiu Abubakari builds the benchmarks, verifiers and post-training data used to evaluate and train frontier language models and coding agents.">
+  <meta property="og:title" content="Al-Waasiu Abubakari">
+  <meta property="og:description" content="I build the tests frontier AI has to pass, and check that the tests can be trusted.">
+  <meta property="og:type" content="profile">
+  <meta name="theme-color" content="#07080c">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem("aa-theme"); } catch (e) {}
+      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+      document.documentElement.classList.add("js");
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip" href="#about">Skip to content</a>
+
+  <header class="nav" id="nav">
+    <div class="wrap nav-inner">
+      <a class="logo" href="#top" aria-label="Back to top"><span>AA</span></a>
+      <nav class="nav-links" id="menu" aria-label="Main">
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn theme" type="button" aria-label="Switch between light and dark mode">
+          <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+        <a class="btn btn-grad btn-sm hide-xs" href="mailto:alwaasiua@gmail.com">Email me</a>
+        <button class="icon-btn menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="wrap hero-grid">
+        <div class="hero-text">
+          <p class="pill"><span class="live" aria-hidden="true"></span>Senior Data Engineer at Turing · Accra, Ghana</p>
+          <h1>I build the tests <span class="grad">frontier AI</span> has to pass.</h1>
+          <p class="rotator">And I design the
+            <span class="rotate" aria-hidden="true"><span class="rotate-word" data-words="benchmarks|verifiers|reward environments|post-training data|LLM judges">benchmarks</span><span class="cursor"></span></span>
+            <span class="sr-only">benchmarks, verifiers, reward environments, post-training data and LLM judges</span>
+            behind them, then check the tests themselves can be trusted.</p>
+          <div class="hero-cta">
+            <a class="btn btn-grad" href="#work">See my work <span aria-hidden="true">↓</span></a>
+            <a class="btn btn-glass" href="#contact">Get in touch</a>
+          </div>
+          <div class="socials">
+            <a href="mailto:alwaasiua@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+            <a href="https://www.linkedin.com/in/al-waasiu-abubakari-801082255" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" class="fill"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+            <a href="https://github.com/abubakaria56" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true" class="fill"><path d="M12 .5A11.5 11.5 0 0 0 8.36 22.9c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg></a>
+            <a href="https://github.com/FARAD56" aria-label="GitHub, earlier projects"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></a>
+          </div>
+        </div>
+
+        <div class="hero-photo">
+          <div class="portrait">
+            <span class="initials" aria-hidden="true">AA</span>
+            <img src="assets/img/photo.jpg" alt="Al-Waasiu Abubakari" width="400" height="400" onerror="this.remove()">
+          </div>
+          <div class="float f1"><b>Merged</b> into NVIDIA NeMo Gym</div>
+          <div class="float f2"><b>17</b> frontier models evaluated</div>
+          <div class="float f3"><b>Valedictorian</b>3.97 / 4.00 GPA</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-label="Benchmarks and tools I work with">
+      <div class="marquee-track">
+        <span>SWE-bench</span><span>CFBench</span><span>SysBench</span><span>InverseIF</span><span>ReasonIF</span><span>MultiChallenge</span><span>WebArena</span><span>NVIDIA NeMo Gym</span><span>Harbor</span><span>Daytona</span><span>Kubernetes</span><span>FastAPI</span><span>pgvector</span><span>Langfuse</span><span>RLHF</span><span>SFT</span><span>LLM-as-judge</span>
+        <span aria-hidden="true">SWE-bench</span><span aria-hidden="true">CFBench</span><span aria-hidden="true">SysBench</span><span aria-hidden="true">InverseIF</span><span aria-hidden="true">ReasonIF</span><span aria-hidden="true">MultiChallenge</span><span aria-hidden="true">WebArena</span><span aria-hidden="true">NVIDIA NeMo Gym</span><span aria-hidden="true">Harbor</span><span aria-hidden="true">Daytona</span><span aria-hidden="true">Kubernetes</span><span aria-hidden="true">FastAPI</span><span aria-hidden="true">pgvector</span><span aria-hidden="true">Langfuse</span><span aria-hidden="true">RLHF</span><span aria-hidden="true">SFT</span><span aria-hidden="true">LLM-as-judge</span>
+      </div>
+    </div>
+
+    <section class="stats">
+      <div class="wrap stats-grid">
+        <div class="stat"><strong data-count="17">17</strong><span>frontier models run through my evaluation pipelines</span></div>
+        <div class="stat"><strong data-count="11">11</strong><span>languages in the VerifIF reward environment</span></div>
+        <div class="stat"><strong data-count="3.97" data-decimals="2">3.97</strong><span>GPA out of 4.00, valedictorian</span></div>
+        <div class="stat"><strong>Top&nbsp;3</strong><span>of 11,097 graduates, University of Ghana</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="wrap about">
+        <div class="section-label reveal">01 · About</div>
+        <div class="about-body reveal">
+          <h2 class="big">Most of my work sits on the <span class="grad">data side</span> of post-training.</h2>
+          <p>I write tasks that make strong models fail, build the graders that score them, and check that those graders can actually be trusted. Along the way I've found verifiers that mis-scored every language but English, LLM judges that invented violations, and coding graders an agent could pass without doing the work.</p>
+          <p>The question I keep coming back to is <em>why</em> a dataset changes what a model learns, not just whether it helped. That's what I want to study next, from the training side: how post-training data and reward design shape a model, and what happens when the reward is wrong.</p>
+          <ul class="chips">
+            <li>Post-training data</li><li>Reward design</li><li>Verifiers</li><li>Reward hacking</li><li>Coding-agent benchmarks</li><li>Instruction following</li><li>Multilingual evaluation</li>
+          </ul>
+        </div>
+        <div class="term reveal" aria-label="How I check that a grader can be trusted">
+          <div class="term-bar"><span class="lights"><i></i><i></i><i></i></span><span>how-i-check-a-grader.sh</span></div>
+          <div class="term-body">
+            <p class="cmd"><span class="ps">$</span> trust-but-verify grader/</p>
+            <p class="ln"><span class="ok">✓</span> independent reference implementation <span class="dim">passes</span></p>
+            <p class="ln"><span class="ok">✓</span> deliberately broken solutions <span class="dim">fail</span></p>
+            <p class="ln"><span class="ok">✓</span> replays of real agent runs <span class="dim">agree</span></p>
+            <p class="ln"><span class="warn">!</span> agent skipped the spec and still passed <span class="dim">→ exploit</span></p>
+            <p class="ln"><span class="ok">✓</span> exploit closed, grader re-checked <span class="dim">passes</span></p>
+            <p class="ln done"><span class="ps">→</span> <b>grader trusted.</b> <span class="dim">now it can be a reward.</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div class="section-label">02 · Selected work</div>
+          <h2>What I'm building at <span class="grad">Turing</span></h2>
+          <p>Benchmarks, verifiers and training data for leading AI labs, since October 2024.</p>
+        </div>
+
+        <div class="bento">
+          <article class="tile t-wide spot reveal">
+            <div class="tile-top"><span class="tag">Now</span><time>Aug 2026 – present</time></div>
+            <h3>Long-horizon coding-agent benchmarks</h3>
+            <p>An agent works on its own for hours and is graded once, on the final repository. I designed the task-creation pipeline for <b>SWE-Marathon</b>, where agents build systems like a TLS 1.3 handshake or a SPARQL query engine from their specifications, and <b>ProdBench</b>, where they fix real open-source bugs.</p>
+            <p>Most of the work is making the grader trustworthy: every grader is tested against an independent reference implementation, deliberately broken solutions and replays of real agent runs, and we close the reward-hacking exploits that turns up.</p>
+          </article>
+
+          <article class="tile t-feature spot reveal">
+            <div class="tile-top"><span class="tag tag-hot">Open source</span><time>Feb – May 2026</time></div>
+            <h3>VerifIF in NVIDIA NeMo Gym</h3>
+            <p>A multilingual instruction-following verifier used as a reinforcement-learning reward: rule-based checks for countable constraints, LLM judges for tone and style, one binary reward, 11 languages. I co-developed it and made the largest share of its commits.</p>
+            <a class="arrow-link" href="https://github.com/NVIDIA-NeMo/Gym/pull/951">Merged in PR #951 <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="tile spot reveal">
+            <div class="tile-top"><span class="tag">Team lead</span><time>Jul – Aug 2026</time></div>
+            <h3>SWE-IF-Augmented</h3>
+            <p>SWE-bench only checks whether a fix passes the tests. I led 6–8 engineers on a version that also checks whether the agent followed the instructions it was given, and scores that separately.</p>
+          </article>
+
+          <article class="tile spot reveal">
+            <div class="tile-top"><span class="tag">Evaluation</span><time>Oct 2025 – Jun 2026</time></div>
+            <h3>Instruction-following evaluation</h3>
+            <p>Pipelines running up to 17 frontier models on CFBench, SysBench, InverseIF, ReasonIF, MultiChallenge and WebArena. I checked the evaluators as closely as the models: a judge against human reviewers, three failed datasets traced to one grading defect, and an English-only checker extended to Spanish, Brazilian Portuguese, Arabic and more.</p>
+          </article>
+
+          <article class="tile spot reveal">
+            <div class="tile-top"><span class="tag">Platform</span><time>Jun – Jul 2026</time></div>
+            <h3>Skills-benchmark platform</h3>
+            <p>Infrastructure for testing whether reusable skills make coding agents better: FastAPI, Next.js, Harbor and Daytona sandboxes on Kubernetes, pgvector duplicate detection with an LLM judge, and Langfuse tracing. Evaluated Claude Opus 5, GPT-5.6 and Qwen 3.7 Max with and without skills.</p>
+          </article>
+
+          <article class="tile t-wide spot reveal">
+            <div class="tile-top"><span class="tag">Data</span><time>Oct 2024 – Oct 2025</time></div>
+            <h3>Post-training data for frontier models</h3>
+            <p>RLHF preference and SFT datasets for complex instruction following, multi-step reasoning and agentic tool use, including tool-calling trajectories with reasoning traces. Also verifiable instruction-following data: multi-turn conversations with programmatically checkable constraints, where the last turn is written to make frontier models fail.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div class="section-label">03 · Experience</div>
+          <h2>Before and alongside Turing</h2>
+        </div>
+        <div class="timeline">
+          <article class="t-item reveal">
+            <time>Mar – Jun 2026</time>
+            <div><h3>Senior QA Analyst, Coding</h3><p class="org">Invisible Technologies</p>
+            <p>Reviewed software-engineering and long-horizon agentic tasks and agent trajectories, catching underspecified instructions and tests that accepted wrong answers. Also built RLHF and SFT data for coding, agentic tasks, reasoning, instruction following and image description.</p></div>
+          </article>
+          <article class="t-item reveal">
+            <time>Jan – Sep 2025</time>
+            <div><h3>Head of Academy</h3><p class="org">Africa to Silicon Valley (A2SV)</p>
+            <p>Taught daily sessions on data structures, algorithms and software engineering in Python, mentored students preparing for engineering roles, and ran weekly contests on LeetCode, Codeforces and HackerRank.</p></div>
+          </article>
+          <article class="t-item reveal">
+            <time>Sep 2024 – Jan 2026</time>
+            <div><h3>Editorial Assistant</h3><p class="org">Science and Development Journal</p>
+            <p>Fact-checked and copy-edited scientific manuscripts before publication, checking claims, figures and citations against their sources.</p></div>
+          </article>
+          <article class="t-item reveal">
+            <time>Oct 2024 – Oct 2025</time>
+            <div><h3>Teaching Assistant</h3><p class="org">University of Ghana, Computer Engineering</p>
+            <p>Ran lab sessions for undergraduate computer engineering courses, graded assignments and helped prepare course materials.</p></div>
+          </article>
+          <article class="t-item reveal">
+            <time>Apr – Dec 2024</time>
+            <div><h3>Mobile Development Team Lead</h3><p class="org">Terra</p>
+            <p>Led the Flutter team on a platform for finding and comparing housing in Ghana, and built the sign-up and verification flow and the listing and comparison screens. Engagement rose 40% and the app handled more than 500 transactions.</p></div>
+          </article>
+          <article class="t-item reveal">
+            <time>Mar – Apr 2024</time>
+            <div><h3>Research Assistant</h3><p class="org">UNICEF Ghana · Wa</p>
+            <p>Designed the survey and collected data from more than 500 respondents in the Upper West Region on the risk of insecurity in the Sahel spilling over into northern Ghana, then analyzed it in SPSS for the project report.</p></div>
+          </article>
+          <article class="t-item reveal">
+            <time>Jun – Sep 2023</time>
+            <div><h3>Research Assistant</h3><p class="org">University of Ghana</p>
+            <p>Measured how well consumer wearables (Fitbit, Xiaomi) track heart rate and SpO2 against hospital-grade monitors in more than 30 participants using Bland–Altman analysis, and built a web app that shows vital signs in real time.</p></div>
+          </article>
+          <article class="t-item reveal">
+            <time>Sep 2022 – Feb 2023</time>
+            <div><h3>AI/ML Engineering Intern</h3><p class="org">Trestle Academy</p>
+            <p>Built a supervised learning pipeline that classifies device offset faults with 91% accuracy on held-out data, plus early-warning models that flag faults before they happen.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div class="section-label">04 · Projects</div>
+          <h2>Things I've built</h2>
+        </div>
+        <div class="projects">
+          <a class="project spot reveal" href="https://abubakaria56.github.io/Multi-LLM-Runner/">
+            <div class="p-art p-art-1" aria-hidden="true"><span></span><span></span><span></span></div>
+            <div class="p-body">
+              <div class="tile-top"><span class="tag">2025</span><span class="go" aria-hidden="true">↗</span></div>
+              <h3>Multi-LLM Runner</h3>
+              <p>Send one prompt to several language models at once and watch each answer stream into its own column, with its response time and memory. FastAPI and React.</p>
+            </div>
+          </a>
+          <a class="project spot reveal" href="https://hissoftware.pythonanywhere.com/">
+            <div class="p-art p-art-2" aria-hidden="true"><span></span><span></span><span></span></div>
+            <div class="p-body">
+              <div class="tile-top"><span class="tag">Thesis · 2024</span><span class="go" aria-hidden="true">↗</span></div>
+              <h3>Integrated Health Management System</h3>
+              <p>A distributed database that keeps patient records in sync across hospitals, a care-management system with telemedicine, and a medication-reminder service. Two awards for best graduating project.</p>
+            </div>
+          </a>
+          <div class="project spot reveal">
+            <div class="p-art p-art-3" aria-hidden="true"><span></span><span></span><span></span></div>
+            <div class="p-body">
+              <div class="tile-top"><span class="tag">2026</span></div>
+              <h3>IEU Performance and Attendance System</h3>
+              <p>A platform for the Islamic Education Unit to track performance and attendance across primary and junior high schools, with role-based access, approval workflows and audit logs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="education">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div class="section-label">05 · Education and honors</div>
+          <h2>Where I trained</h2>
+        </div>
+      </div>
+      <div class="wrap edu">
+        <div class="edu-left reveal">
+          <h3 class="col-title">Education</h3>
+          <div class="edu-card spot">
+            <p class="edu-years">2021 – 2024</p>
+            <h3>BSc Computer Engineering</h3>
+            <p class="org">University of Ghana</p>
+            <div class="edu-stats">
+              <div><strong>3.97</strong><span>/ 4.00 GPA</span></div>
+              <div><strong>Top 3</strong><span>of 11,097</span></div>
+            </div>
+            <p>Valedictorian of the College of Basic and Applied Sciences. Thesis on health data management, synchronization, telemedicine and medication management.</p>
+            <a class="arrow-link" href="https://www.youtube.com/watch?v=H5sJKYk3-r8&amp;t=3750s" data-video="https://www.youtube-nocookie.com/embed/H5sJKYk3-r8?start=3750&amp;end=4570&amp;autoplay=1&amp;rel=0" data-video-title="Valedictory address, University of Ghana, February 2025">Watch my valedictory address <span aria-hidden="true">↗</span></a>
+          </div>
+          <ul class="mini-list">
+            <li><b>Machine Learning Program</b> · Google <time>2022 – 2024</time></li>
+            <li><b>Competitive Programming Program</b> · A2SV <time>2023 – 2024</time></li>
+          </ul>
+        </div>
+        <div class="edu-right reveal">
+          <h3 class="col-title">Honors and awards</h3>
+          <ul class="awards">
+            <li><span class="medal" aria-hidden="true">★</span><div><b>Valedictorian</b>, College of Basic and Applied Sciences · <a class="inline-link" href="https://www.youtube.com/watch?v=H5sJKYk3-r8&amp;t=3750s" data-video="https://www.youtube-nocookie.com/embed/H5sJKYk3-r8?start=3750&amp;end=4570&amp;autoplay=1&amp;rel=0" data-video-title="Valedictory address, University of Ghana, February 2025">watch the address</a></div><time>2025</time></li>
+            <li><span class="medal" aria-hidden="true">★</span><div><b>Joseph Siaw Agyepong Award</b>, Overall Best Graduating Male Student, College of Basic and Applied Sciences</div><time>2025</time></li>
+            <li><span class="medal" aria-hidden="true">★</span><div><b>Dr. Jeffery Quaye Obe Prize</b>, Best Graduating Student in Engineering</div><time>2025</time></li>
+            <li><span class="medal" aria-hidden="true">★</span><div><b>Ecobank Award</b>, Best Graduating Student in Computer Engineering</div><time>2025</time></li>
+            <li><span class="medal" aria-hidden="true">★</span><div><b>GhIPSS Award</b>, Best Graduating Project Work in Computer Engineering</div><time>2025</time></li>
+            <li><span class="medal" aria-hidden="true">★</span><div><b>Mr. Frederick Attakumah Prize</b>, Best Graduating Project Work in Computer Engineering</div><time>2025</time></li>
+            <li><span class="medal" aria-hidden="true">★</span><div><b>Sadhu T.L. Vaswani / Indian Association of Ghana</b> Endowment Fund Award</div><time>2024</time></li>
+            <li><span class="medal" aria-hidden="true">★</span><div><b>Alumni Prize</b>, Best Level 200 Student in the Sciences</div><time>2023</time></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="service">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div class="section-label">06 · Leadership and service</div>
+          <h2>Outside the day job</h2>
+        </div>
+        <div class="service">
+          <article class="svc spot reveal"><time>2024</time><h3>Vice President, Arm(E3)ngage Students Club</h3><p>Four hands-on Arm workshops for about 60 students, and the department's first maker fair with six departments and three other universities.</p></article>
+          <article class="svc spot reveal"><time>2022 – now</time><h3>Facilitator, Elsie Effah Kaufmann Foundation</h3><p>Training elementary-school teachers at five schools in Accra to run hands-on science experiments in class.</p></article>
+          <article class="svc spot reveal"><time>2021 – now</time><h3>Member, Muslim Intellectuals Network</h3><p>School uniforms, classrooms for basic schools, and mentorship and award programs for students in Wa.</p></article>
+          <article class="svc spot reveal"><time>2022</time><h3>Coach, Ghana Science and Tech Explorer Prize</h3><p>Coached a student team whose Arduino smart cane for the visually impaired won Most Innovative Project.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div class="section-label">07 · Toolkit</div>
+          <h2>What I work with</h2>
+        </div>
+        <div class="skills">
+          <div class="skill-group reveal"><h3>LLM evaluation and agents</h3><p>Benchmark and task design · verifier and grader design · LLM-as-judge and rubrics · reward-hacking threat modeling · RLHF and SFT data · RL reward environments · Harbor · mini-SWE-agent</p></div>
+          <div class="skill-group reveal"><h3>Languages</h3><p>Python · TypeScript · JavaScript · Java · C# · C/C++ · SQL</p></div>
+          <div class="skill-group reveal"><h3>Web and backend</h3><p>FastAPI · Django · React · Next.js · Flutter · PostgreSQL</p></div>
+          <div class="skill-group reveal"><h3>Cloud and DevOps</h3><p>Google Cloud · GKE · Kubernetes · Docker · sandboxed execution · Jenkins · Linux · Git</p></div>
+          <div class="skill-group reveal"><h3>Testing</h3><p>pytest · mutation testing · adversarial test design · trajectory analysis</p></div>
+          <div class="skill-group reveal"><h3>ML and data</h3><p>scikit-learn · pandas · NumPy · embeddings and pgvector · statistical analysis</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="wrap">
+        <div class="cta reveal">
+          <div class="aurora aurora-cta" aria-hidden="true"><i></i><i></i><i></i></div>
+          <p class="section-label">08 · Contact</p>
+          <h2>Let's talk evaluation, rewards and <span class="grad">post-training data</span>.</h2>
+          <p>Email is the best way to reach me.</p>
+          <div class="cta-row">
+            <a class="btn btn-grad" href="mailto:alwaasiua@gmail.com">alwaasiua@gmail.com</a>
+            <button class="btn btn-glass copy" type="button" data-copy="alwaasiua@gmail.com">Copy email</button>
+            <a class="btn btn-glass" href="https://www.linkedin.com/in/al-waasiu-abubakari-801082255">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot-inner">
+      <span>© <span id="year">2026</span> Al-Waasiu Abubakari</span>
+      <span class="foot-links"><a href="https://github.com/abubakaria56">GitHub</a><a href="https://www.linkedin.com/in/al-waasiu-abubakari-801082255">LinkedIn</a><a href="#top">Back to top ↑</a></span>
+    </div>
+  </footer>
+
+  <dialog class="video-modal" id="video-modal" aria-label="Valedictory address">
+    <div class="video-frame"><iframe title="Valedictory address" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+    <div class="video-bar"><span class="video-title"></span><span class="dim">1:02:30 – 1:16:10</span><button class="icon-btn video-close" type="button" aria-label="Close video"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  </dialog>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
