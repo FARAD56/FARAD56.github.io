@@ -31,9 +31,9 @@
       <a class="logo" href="#top" aria-label="Back to top"><span>AA</span></a>
       <nav class="nav-links" id="menu" aria-label="Main">
         <a href="#about">About</a>
-        <a href="#research">Research</a>
         <a href="#work">Work</a>
         <a href="#open-source">Open source</a>
+        <a href="#research">Research</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a href="#education">Education</a>
@@ -129,10 +129,105 @@
       </div>
     </section>
 
+    <section class="section" id="work">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div class="section-label">02 · Current work</div>
+          <h2>What I'm building at <span class="grad">Turing</span></h2>
+          <p>Benchmarks, verifiers and training data for leading AI labs, since October 2024.</p>
+        </div>
+
+        <div class="bento">
+          <article class="tile t-wide spot reveal">
+            <div class="tile-top"><span class="tag">Now</span><time>Aug 2026 – present</time></div>
+            <h3>Long-horizon coding-agent benchmarks</h3>
+            <p>An agent works on its own for hours and is graded once, on the final repository. I designed the task-creation pipeline for <b>SWE-Marathon</b>, where agents build systems like a TLS 1.3 handshake or a SPARQL query engine from their specifications, and <b>ProdBench</b>, where they fix real open-source bugs.</p>
+            <p>Most of the work is making the grader trustworthy: every grader is tested against an independent reference implementation, deliberately broken solutions and replays of real agent runs, and we close the reward-hacking exploits that turns up.</p>
+          </article>
+
+          <article class="tile spot reveal">
+            <div class="tile-top"><span class="tag">Team lead</span><time>Jul – Aug 2026</time></div>
+            <h3>SWE-IF-Augmented</h3>
+            <p>SWE-bench only checks whether a fix passes the tests. I led 6–8 engineers on a version that also checks whether the agent followed the instructions it was given, and scores that separately.</p>
+          </article>
+
+          <article class="tile spot reveal">
+            <div class="tile-top"><span class="tag">Evaluation</span><time>Oct 2025 – Jun 2026</time></div>
+            <h3>Instruction-following evaluation</h3>
+            <p>Pipelines running up to 17 frontier models on CFBench, SysBench, InverseIF, ReasonIF, MultiChallenge and WebArena. I checked the evaluators as closely as the models: a judge against human reviewers, three failed datasets traced to one grading defect, and an English-only checker extended to Spanish, Brazilian Portuguese, Arabic and more.</p>
+          </article>
+
+          <article class="tile spot reveal">
+            <div class="tile-top"><span class="tag">Platform</span><time>Jun – Jul 2026</time></div>
+            <h3>Skills-benchmark platform</h3>
+            <p>Infrastructure for testing whether reusable skills make coding agents better: FastAPI, Next.js, Harbor and Daytona sandboxes on Kubernetes, pgvector duplicate detection with an LLM judge, and Langfuse tracing. Evaluated Claude Opus 5, GPT-5.6 and Qwen 3.7 Max with and without skills.</p>
+          </article>
+
+          <article class="tile spot reveal">
+            <div class="tile-top"><span class="tag">Data</span><time>Oct 2024 – Oct 2025</time></div>
+            <h3>Post-training data for frontier models</h3>
+            <p>RLHF preference and SFT datasets for complex instruction following, multi-step reasoning and agentic tool use, including tool-calling trajectories with reasoning traces. Also verifiable instruction-following data: multi-turn conversations with programmatically checkable constraints, where the last turn is written to make frontier models fail.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="open-source">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div class="section-label">03 · Open source</div>
+          <h2>Contributing to <span class="grad">NVIDIA NeMo Gym</span></h2>
+          <p>NeMo Gym is NVIDIA's open-source library of environments for evaluating and training models and agents with reinforcement learning.</p>
+        </div>
+
+        <div class="os reveal">
+          <div class="os-main">
+            <div class="os-repo">
+              <svg viewBox="0 0 24 24" aria-hidden="true" class="fill"><path d="M12 .5A11.5 11.5 0 0 0 8.36 22.9c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>
+              <span>NVIDIA-NeMo / Gym</span>
+              <span class="os-merged"><svg viewBox="0 0 16 16" aria-hidden="true" class="fill"><path d="M5 3.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0zm0 2.12A2.25 2.25 0 1 0 3.5 5.37v5.26a2.25 2.25 0 1 0 1.5 0V7.5c.7.53 1.57.84 2.5.84h2.13a2.25 2.25 0 1 0 0-1.5H7.5A2.5 2.5 0 0 1 5 5.37zM4.25 12a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5zm7.5-5.25a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5z"/></svg>Merged</span>
+            </div>
+            <h3>VerifIF: a multilingual instruction-following reward environment</h3>
+            <p>When a model is trained with reinforcement learning, something has to decide whether each response followed its instructions. VerifIF does that across 11 languages: rule-based checks handle the countable constraints, LLM judges handle tone and style, and the two combine into a single pass/fail reward. It covers the MultiChallenge, InverseIFEval, CFBench and SysBench datasets.</p>
+
+            <div class="flow" aria-label="How VerifIF scores a response">
+              <div class="flow-node">Model response</div>
+              <div class="flow-arrow" aria-hidden="true"></div>
+              <div class="flow-split">
+                <div class="flow-node flow-rule">Rule-based checks<small>word counts, formats, keywords</small></div>
+                <div class="flow-node flow-judge">LLM judge<small>tone, style, intent</small></div>
+              </div>
+              <div class="flow-arrow" aria-hidden="true"></div>
+              <div class="flow-node flow-reward">Reward <b>1</b> or <b>0</b></div>
+            </div>
+
+            <div class="os-links">
+              <a class="btn btn-grad" href="https://github.com/NVIDIA-NeMo/Gym/pull/951">View merged PR #951 <span aria-hidden="true">↗</span></a>
+              <a class="btn btn-glass" href="https://github.com/NVIDIA-NeMo/Gym/pull/801">My original PR #801 <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+
+          <aside class="os-side">
+            <div class="os-stats">
+              <div><strong>#1</strong><span>committer on the merged PR, out of 26 contributors</span></div>
+              <div><strong>16k+</strong><span>lines merged upstream, across 39 files</span></div>
+              <div><strong>11</strong><span>languages scored</span></div>
+              <div><strong>1.2k★</strong><span>GitHub stars on NeMo Gym</span></div>
+            </div>
+            <ol class="os-timeline">
+              <li><time>Mar 2026</time><p>Opened <a href="https://github.com/NVIDIA-NeMo/Gym/pull/801">PR #801</a> with the validators and their integration</p></li>
+              <li><time>Apr 2026</time><p>Work carried into a combined Turing environments PR alongside MultiChallenge, CFBench and SysBench</p></li>
+              <li><time>7 May 2026</time><p>Merged in <a href="https://github.com/NVIDIA-NeMo/Gym/pull/951">PR #951</a></p></li>
+            </ol>
+          </aside>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="research">
       <div class="wrap">
         <div class="section-head reveal">
-          <div class="section-label">02 · Research</div>
+          <div class="section-label">04 · Research</div>
           <h2>Research <span class="grad">experience</span></h2>
           <p>Studies I have run on how well AI systems are evaluated, and earlier work in health and social research.</p>
         </div>
@@ -192,101 +287,6 @@
               </dl>
             </article>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="work">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <div class="section-label">03 · Current work</div>
-          <h2>What I'm building at <span class="grad">Turing</span></h2>
-          <p>Benchmarks, verifiers and training data for leading AI labs, since October 2024.</p>
-        </div>
-
-        <div class="bento">
-          <article class="tile t-wide spot reveal">
-            <div class="tile-top"><span class="tag">Now</span><time>Aug 2026 – present</time></div>
-            <h3>Long-horizon coding-agent benchmarks</h3>
-            <p>An agent works on its own for hours and is graded once, on the final repository. I designed the task-creation pipeline for <b>SWE-Marathon</b>, where agents build systems like a TLS 1.3 handshake or a SPARQL query engine from their specifications, and <b>ProdBench</b>, where they fix real open-source bugs.</p>
-            <p>Most of the work is making the grader trustworthy: every grader is tested against an independent reference implementation, deliberately broken solutions and replays of real agent runs, and we close the reward-hacking exploits that turns up.</p>
-          </article>
-
-          <article class="tile spot reveal">
-            <div class="tile-top"><span class="tag">Team lead</span><time>Jul – Aug 2026</time></div>
-            <h3>SWE-IF-Augmented</h3>
-            <p>SWE-bench only checks whether a fix passes the tests. I led 6–8 engineers on a version that also checks whether the agent followed the instructions it was given, and scores that separately.</p>
-          </article>
-
-          <article class="tile spot reveal">
-            <div class="tile-top"><span class="tag">Evaluation</span><time>Oct 2025 – Jun 2026</time></div>
-            <h3>Instruction-following evaluation</h3>
-            <p>Pipelines running up to 17 frontier models on CFBench, SysBench, InverseIF, ReasonIF, MultiChallenge and WebArena. I checked the evaluators as closely as the models: a judge against human reviewers, three failed datasets traced to one grading defect, and an English-only checker extended to Spanish, Brazilian Portuguese, Arabic and more.</p>
-          </article>
-
-          <article class="tile spot reveal">
-            <div class="tile-top"><span class="tag">Platform</span><time>Jun – Jul 2026</time></div>
-            <h3>Skills-benchmark platform</h3>
-            <p>Infrastructure for testing whether reusable skills make coding agents better: FastAPI, Next.js, Harbor and Daytona sandboxes on Kubernetes, pgvector duplicate detection with an LLM judge, and Langfuse tracing. Evaluated Claude Opus 5, GPT-5.6 and Qwen 3.7 Max with and without skills.</p>
-          </article>
-
-          <article class="tile spot reveal">
-            <div class="tile-top"><span class="tag">Data</span><time>Oct 2024 – Oct 2025</time></div>
-            <h3>Post-training data for frontier models</h3>
-            <p>RLHF preference and SFT datasets for complex instruction following, multi-step reasoning and agentic tool use, including tool-calling trajectories with reasoning traces. Also verifiable instruction-following data: multi-turn conversations with programmatically checkable constraints, where the last turn is written to make frontier models fail.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="open-source">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <div class="section-label">04 · Open source</div>
-          <h2>Contributing to <span class="grad">NVIDIA NeMo Gym</span></h2>
-          <p>NeMo Gym is NVIDIA's open-source library of environments for evaluating and training models and agents with reinforcement learning.</p>
-        </div>
-
-        <div class="os reveal">
-          <div class="os-main">
-            <div class="os-repo">
-              <svg viewBox="0 0 24 24" aria-hidden="true" class="fill"><path d="M12 .5A11.5 11.5 0 0 0 8.36 22.9c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>
-              <span>NVIDIA-NeMo / Gym</span>
-              <span class="os-merged"><svg viewBox="0 0 16 16" aria-hidden="true" class="fill"><path d="M5 3.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0zm0 2.12A2.25 2.25 0 1 0 3.5 5.37v5.26a2.25 2.25 0 1 0 1.5 0V7.5c.7.53 1.57.84 2.5.84h2.13a2.25 2.25 0 1 0 0-1.5H7.5A2.5 2.5 0 0 1 5 5.37zM4.25 12a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5zm7.5-5.25a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5z"/></svg>Merged</span>
-            </div>
-            <h3>VerifIF: a multilingual instruction-following reward environment</h3>
-            <p>When a model is trained with reinforcement learning, something has to decide whether each response followed its instructions. VerifIF does that across 11 languages: rule-based checks handle the countable constraints, LLM judges handle tone and style, and the two combine into a single pass/fail reward. It covers the MultiChallenge, InverseIFEval, CFBench and SysBench datasets.</p>
-
-            <div class="flow" aria-label="How VerifIF scores a response">
-              <div class="flow-node">Model response</div>
-              <div class="flow-arrow" aria-hidden="true"></div>
-              <div class="flow-split">
-                <div class="flow-node flow-rule">Rule-based checks<small>word counts, formats, keywords</small></div>
-                <div class="flow-node flow-judge">LLM judge<small>tone, style, intent</small></div>
-              </div>
-              <div class="flow-arrow" aria-hidden="true"></div>
-              <div class="flow-node flow-reward">Reward <b>1</b> or <b>0</b></div>
-            </div>
-
-            <div class="os-links">
-              <a class="btn btn-grad" href="https://github.com/NVIDIA-NeMo/Gym/pull/951">View merged PR #951 <span aria-hidden="true">↗</span></a>
-              <a class="btn btn-glass" href="https://github.com/NVIDIA-NeMo/Gym/pull/801">My original PR #801 <span aria-hidden="true">↗</span></a>
-            </div>
-          </div>
-
-          <aside class="os-side">
-            <div class="os-stats">
-              <div><strong>#1</strong><span>committer on the merged PR, out of 26 contributors</span></div>
-              <div><strong>16k+</strong><span>lines merged upstream, across 39 files</span></div>
-              <div><strong>11</strong><span>languages scored</span></div>
-              <div><strong>1.2k★</strong><span>GitHub stars on NeMo Gym</span></div>
-            </div>
-            <ol class="os-timeline">
-              <li><time>Mar 2026</time><p>Opened <a href="https://github.com/NVIDIA-NeMo/Gym/pull/801">PR #801</a> with the validators and their integration</p></li>
-              <li><time>Apr 2026</time><p>Work carried into a combined Turing environments PR alongside MultiChallenge, CFBench and SysBench</p></li>
-              <li><time>7 May 2026</time><p>Merged in <a href="https://github.com/NVIDIA-NeMo/Gym/pull/951">PR #951</a></p></li>
-            </ol>
-          </aside>
         </div>
       </div>
     </section>
