@@ -101,7 +101,7 @@
     function frame(now) {
       var t = Math.min(1, (now - start) / duration);
       var eased = 1 - Math.pow(1 - t, 3);
-      el.textContent = (target * eased).toFixed(decimals);
+      el.textContent = (target * eased).toFixed(decimals) + (t === 1 ? (el.getAttribute("data-suffix") || "") : "");
       if (t < 1) requestAnimationFrame(frame);
     }
     requestAnimationFrame(frame);
