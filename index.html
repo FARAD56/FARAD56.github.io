@@ -6,7 +6,7 @@
   <title>Al-Waasiu Abubakari · Data, rewards and benchmarks for frontier AI</title>
   <meta name="description" content="Al-Waasiu Abubakari builds the benchmarks, verifiers and post-training data used to evaluate and train frontier language models and coding agents.">
   <meta property="og:title" content="Al-Waasiu Abubakari">
-  <meta property="og:description" content="I check the instrument before I trust the number. Benchmarks, verifiers and post-training data for frontier language models and coding agents.">
+  <meta property="og:description" content="I engineer the data, rewards and benchmarks behind frontier AI, and research whether the measurements can be trusted.">
   <meta property="og:type" content="profile">
   <meta name="theme-color" content="#07080c">
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
@@ -31,6 +31,7 @@
       <a class="logo" href="#top" aria-label="Back to top"><span>AA</span></a>
       <nav class="nav-links" id="menu" aria-label="Main">
         <a href="#about">About</a>
+        <a href="#research">Research</a>
         <a href="#work">Work</a>
         <a href="#open-source">Open source</a>
         <a href="#experience">Experience</a>
@@ -102,45 +103,6 @@
       </div>
     </section>
 
-    <section class="thread" id="thread">
-      <div class="wrap">
-        <div class="thread-head reveal">
-          <p class="section-label">The common thread</p>
-          <h2>I check the instrument<br><span class="grad">before I trust the number.</span></h2>
-          <p>It's the same habit in every project I've done, from hospital monitors to frontier AI.</p>
-        </div>
-        <div class="thread-steps">
-          <article class="step spot reveal">
-            <div class="step-top"><span class="step-n">2023</span><span class="step-field">Health research</span></div>
-            <dl>
-              <div><dt>Instrument</dt><dd>Consumer wearables (Fitbit, Xiaomi)</dd></div>
-              <div><dt>Checked against</dt><dd>Hospital-grade monitors, 30+ participants, Bland–Altman analysis</dd></div>
-              <div class="found"><dt>Found</dt><dd>How far heart-rate and SpO2 readings drift from clinical ground truth</dd></div>
-            </dl>
-          </article>
-          <div class="step-link" aria-hidden="true"></div>
-          <article class="step spot reveal">
-            <div class="step-top"><span class="step-n">2025–26</span><span class="step-field">LLM evaluation</span></div>
-            <dl>
-              <div><dt>Instrument</dt><dd>Automated LLM judges and instruction-following verifiers</dd></div>
-              <div><dt>Checked against</dt><dd>Human reviewers and native-speaker testers</dd></div>
-              <div class="found"><dt>Found</dt><dd>Judges that invented violations, and a verifier that mis-scored every language but English</dd></div>
-            </dl>
-          </article>
-          <div class="step-link" aria-hidden="true"></div>
-          <article class="step spot reveal">
-            <div class="step-top"><span class="step-n">2026</span><span class="step-field">Coding-agent benchmarks</span></div>
-            <dl>
-              <div><dt>Instrument</dt><dd>Graders for hours-long agent tasks</dd></div>
-              <div><dt>Checked against</dt><dd>Reference implementations, deliberately broken solutions, replays of real agent runs</dd></div>
-              <div class="found"><dt>Found</dt><dd>Reward-hacking exploits, closed before any grader was trusted</dd></div>
-            </dl>
-          </article>
-        </div>
-        <p class="thread-next reveal"><span class="tag tag-hot">Next</span>What happens to a model when the instrument is wrong and it becomes the reward? That's the question I want to study.</p>
-      </div>
-    </section>
-
     <section class="section" id="about">
       <div class="wrap about">
         <div class="section-label reveal">01 · About</div>
@@ -167,10 +129,89 @@
       </div>
     </section>
 
+    <section class="section" id="research">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div class="section-label">02 · Research</div>
+          <h2>Research: <span class="grad">can the measurement be trusted?</span></h2>
+          <p>My research has mostly been about evaluation itself: testing the judges, verifiers and graders that score AI systems, and, before that, the devices that measure patients.</p>
+        </div>
+
+        <div class="rs">
+          <aside class="rs-agenda reveal">
+            <p class="rs-k">What I want to study next</p>
+            <ol class="rs-qs">
+              <li>How do flawed verifiers and reward hacking change what a model learns during reinforcement learning?</li>
+              <li>Which parts of a post-training dataset actually cause a model's improvement?</li>
+              <li>Do models trained on hard tasks learn a skill, or only fit their training set?</li>
+              <li>Does instruction following learned in English transfer to other languages?</li>
+            </ol>
+            <ul class="chips rs-chips">
+              <li>Reward design</li><li>Reward hacking</li><li>Data attribution</li><li>LLM-as-judge</li><li>Multilingual evaluation</li>
+            </ul>
+          </aside>
+
+          <div class="rs-list">
+            <p class="rs-group reveal">AI evaluation and rewards</p>
+            <article class="rs-item reveal">
+              <div class="rs-meta"><span class="rs-n">R1</span><span>Turing · 2025–26</span></div>
+              <h3>Do automated LLM judges agree with human reviewers?</h3>
+              <dl class="rs-dl">
+                <div><dt>Method</dt><dd>Compared an LLM judge's verdicts on multi-turn instruction-following conversations with human reviewers' verdicts, case by case.</dd></div>
+                <div class="rs-find"><dt>Finding</dt><dd>The judge misattributed turns and both invented and missed instruction violations. Separately, three datasets that failed entirely were traced to a single defect in their grading data.</dd></div>
+              </dl>
+            </article>
+            <article class="rs-item reveal">
+              <div class="rs-meta"><span class="rs-n">R2</span><span>Turing · 2025–26</span></div>
+              <h3>Does an instruction-following verifier work beyond English?</h3>
+              <dl class="rs-dl">
+                <div><dt>Method</dt><dd>Tested the verifier on Spanish, Brazilian Portuguese and Arabic responses with native-speaker testers, against what each response actually did.</dd></div>
+                <div class="rs-find"><dt>Finding</dt><dd>Its English-only text handling broke on accents, hyphenated words and Arabic script, passing responses that broke instructions and failing ones that followed them. With their help, the verifier was extended to handle all three.</dd></div>
+              </dl>
+            </article>
+            <article class="rs-item reveal">
+              <div class="rs-meta"><span class="rs-n">R3</span><span>Turing · 2026</span></div>
+              <h3>Can a grader for hours-long agent tasks be trusted as a reward?</h3>
+              <dl class="rs-dl">
+                <div><dt>Method</dt><dd>Ran each grader against an independent reference implementation, deliberately broken solutions and replays of real agent runs.</dd></div>
+                <div class="rs-find"><dt>Finding</dt><dd>Agents could leave part of an implementation unwritten and still pass most checks, because the expected behavior could be reproduced without following the specification. Those exploits were closed before a grader was used.</dd></div>
+              </dl>
+            </article>
+            <article class="rs-item reveal">
+              <div class="rs-meta"><span class="rs-n">R4</span><span>Turing · 2026</span></div>
+              <h3>What do test-based coding benchmarks miss?</h3>
+              <dl class="rs-dl">
+                <div><dt>Method</dt><dd>Led a team of 6–8 engineers adding checkable process, code and response instructions to SWE-bench tasks, scored separately from the tests (SWE-IF-Augmented).</dd></div>
+                <div class="rs-find"><dt>Finding</dt><dd>Passing the tests and following the user's instructions are different things, and a benchmark that only runs tests can't tell them apart.</dd></div>
+              </dl>
+            </article>
+
+            <p class="rs-group reveal">Earlier research</p>
+            <article class="rs-item reveal">
+              <div class="rs-meta"><span class="rs-n">R5</span><span>University of Ghana · 2023</span></div>
+              <h3>How accurate are consumer wearables for vital signs?</h3>
+              <dl class="rs-dl">
+                <div><dt>Method</dt><dd>Measured heart rate and SpO2 from Fitbit and Xiaomi devices against hospital-grade monitors in more than 30 participants, using Bland–Altman analysis.</dd></div>
+                <div class="rs-find"><dt>Finding</dt><dd>Quantified each device's bias and limits of agreement against clinical ground truth, alongside a web app for real-time vital-sign monitoring.</dd></div>
+              </dl>
+            </article>
+            <article class="rs-item reveal">
+              <div class="rs-meta"><span class="rs-n">R6</span><span>UNICEF Ghana · 2024</span></div>
+              <h3>Is insecurity in the Sahel at risk of spilling into northern Ghana?</h3>
+              <dl class="rs-dl">
+                <div><dt>Method</dt><dd>Designed the survey and collected data digitally from more than 500 respondents in the Upper West Region, then analyzed it in SPSS with cross-tabulations and statistical tests.</dd></div>
+                <div class="rs-find"><dt>Finding</dt><dd>Contributed findings to the project report used to inform program decisions.</dd></div>
+              </dl>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="work">
       <div class="wrap">
         <div class="section-head reveal">
-          <div class="section-label">02 · Selected work</div>
+          <div class="section-label">03 · Selected work</div>
           <h2>What I'm building at <span class="grad">Turing</span></h2>
           <p>Benchmarks, verifiers and training data for leading AI labs, since October 2024.</p>
         </div>
@@ -213,7 +254,7 @@
     <section class="section" id="open-source">
       <div class="wrap">
         <div class="section-head reveal">
-          <div class="section-label">03 · Open source</div>
+          <div class="section-label">04 · Open source</div>
           <h2>Contributing to <span class="grad">NVIDIA NeMo Gym</span></h2>
           <p>NeMo Gym is NVIDIA's open-source library of environments for evaluating and training models and agents with reinforcement learning.</p>
         </div>
@@ -265,7 +306,7 @@
     <section class="section" id="experience">
       <div class="wrap">
         <div class="section-head reveal">
-          <div class="section-label">04 · Experience</div>
+          <div class="section-label">05 · Experience</div>
           <h2>Before and alongside Turing</h2>
         </div>
         <div class="timeline">
@@ -316,7 +357,7 @@
     <section class="section" id="projects">
       <div class="wrap">
         <div class="section-head reveal">
-          <div class="section-label">05 · Projects</div>
+          <div class="section-label">06 · Projects</div>
           <h2>Things I've built</h2>
         </div>
         <div class="projects">
@@ -364,7 +405,7 @@
     <section class="section" id="education">
       <div class="wrap">
         <div class="section-head reveal">
-          <div class="section-label">06 · Education and honors</div>
+          <div class="section-label">07 · Education and honors</div>
           <h2>Learning, and the awards along the way</h2>
         </div>
       </div>
@@ -437,7 +478,7 @@
     <section class="section" id="service">
       <div class="wrap">
         <div class="section-head reveal">
-          <div class="section-label">07 · Leadership and service</div>
+          <div class="section-label">08 · Leadership and service</div>
           <h2>Leading teams and giving back</h2>
           <p>Five leadership roles and four service commitments, from engineering teams to classrooms in Wa.</p>
         </div>
@@ -464,7 +505,7 @@
     <section class="section" id="skills">
       <div class="wrap">
         <div class="section-head reveal">
-          <div class="section-label">08 · Toolkit</div>
+          <div class="section-label">09 · Toolkit</div>
           <h2>What I work with</h2>
         </div>
         <div class="skills">
@@ -482,7 +523,7 @@
       <div class="wrap">
         <div class="cta reveal">
           <div class="aurora aurora-cta" aria-hidden="true"><i></i><i></i><i></i></div>
-          <p class="section-label">09 · Contact</p>
+          <p class="section-label">10 · Contact</p>
           <h2>Let's talk evaluation, rewards and <span class="grad">post-training data</span>.</h2>
           <p>Email is the best way to reach me.</p>
           <div class="cta-row">
