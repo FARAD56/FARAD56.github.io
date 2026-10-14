@@ -730,3 +730,7 @@ a.float:hover { border-color: var(--accent-line); }
 .p-btn-muted { color: var(--muted); background: transparent; border-style: dashed; cursor: default; }
 .p-btn-muted:hover { transform: none; border-color: var(--border-strong); }
 .p-body { display: flex; flex-direction: column; }
+.icon-btn-grad { background: var(--grad); color: #fff; border-color: transparent; box-shadow: 0 8px 20px -10px var(--glow-1); }
+.icon-btn-grad:hover { color: #fff; border-color: transparent; transform: translateY(-1px); }
+:root[data-theme="dark"] .icon-btn-grad, :root[data-theme="dark"] .icon-btn-grad:hover { color: #07080c; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .icon-btn-grad, :root:not([data-theme="light"]) .icon-btn-grad:hover { color: #07080c; } }
