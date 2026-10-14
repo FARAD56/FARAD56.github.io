@@ -513,3 +513,31 @@ svg.fill { fill: currentColor; stroke: none; }
 .video-close svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
 @media (max-width: 520px) { .video-bar .dim { display: none; } }
 .inline-link { color: var(--accent); font-weight: 600; } .inline-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+/* Watch buttons */
+.watch-btn {
+  display: inline-flex; align-items: center; gap: 12px; margin-top: 18px; padding: 8px 18px 8px 8px;
+  border-radius: 999px; background: var(--grad); color: #fff; font-weight: 650; font-size: 0.95rem; line-height: 1.25;
+  box-shadow: 0 12px 28px -12px var(--glow-1); transition: transform 0.18s, box-shadow 0.18s;
+}
+.watch-btn:hover { transform: translateY(-2px); box-shadow: 0 16px 34px -12px var(--glow-1); }
+.watch-btn small { display: block; font-weight: 500; font-size: 0.78rem; opacity: 0.85; }
+.play {
+  position: relative; display: grid; place-items: center; flex: none; width: 40px; height: 40px; border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95); color: var(--a1);
+}
+.play::after { content: ""; position: absolute; inset: -4px; border-radius: 50%; border: 2px solid rgba(255, 255, 255, 0.6); animation: ring 2s ease-out infinite; }
+@keyframes ring { from { transform: scale(0.9); opacity: 1; } to { transform: scale(1.35); opacity: 0; } }
+.play svg { width: 16px; height: 16px; margin-left: 2px; fill: currentColor; }
+.watch-sm { display: flex; width: fit-content; margin-top: 10px; padding: 5px 14px 5px 5px; gap: 9px; font-size: 0.86rem; }
+.watch-sm .play { width: 28px; height: 28px; }
+.watch-sm .play svg { width: 12px; height: 12px; }
+.watch-sm .play::after { inset: -3px; }
+:root[data-theme="dark"] .watch-btn { color: #07080c; }
+:root[data-theme="dark"] .play { background: #07080c; color: var(--a1); }
+:root[data-theme="dark"] .play::after { border-color: rgba(7, 8, 12, 0.5); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .watch-btn { color: #07080c; }
+  :root:not([data-theme="light"]) .play { background: #07080c; color: var(--a1); }
+  :root:not([data-theme="light"]) .play::after { border-color: rgba(7, 8, 12, 0.5); }
+}
