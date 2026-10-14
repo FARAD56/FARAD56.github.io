@@ -571,3 +571,28 @@ svg.fill { fill: currentColor; stroke: none; }
   font-size: 0.78rem; font-weight: 600; color: var(--text); background: var(--surface); border: 1px solid var(--border-strong);
 }
 .thesis .arrow-link { margin-top: 12px; font-size: 0.92rem; }
+
+/* Leadership and service groups */
+.group-title {
+  display: flex; align-items: center; gap: 10px; margin: 8px 0 16px;
+  font: 700 1.15rem/1.2 var(--display); letter-spacing: -0.01em;
+}
+.service + .group-title { margin-top: 36px; }
+.gt-icon {
+  display: grid; place-items: center; width: 30px; height: 30px; border-radius: 10px;
+  background: var(--grad); color: #fff; font-size: 0.85rem;
+}
+:root[data-theme="dark"] .gt-icon { color: #07080c; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .gt-icon { color: #07080c; } }
+.svc-org { margin: 4px 0 0 !important; color: var(--accent) !important; font-weight: 600; font-size: 0.86rem !important; }
+.service { grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr)); }
+.service.lead { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.service.lead .svc:first-child { grid-column: span 2; background: radial-gradient(420px 200px at 100% 0%, var(--accent-soft), transparent 70%), var(--surface); border-color: var(--accent-line); }
+.service.serve { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 1080px) {
+  .service.lead, .service.serve { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .service.lead, .service.serve { grid-template-columns: minmax(0, 1fr); }
+  .service.lead .svc:first-child { grid-column: auto; }
+}
