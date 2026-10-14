@@ -189,10 +189,10 @@ svg.fill { fill: currentColor; stroke: none; }
 @keyframes ping { 70% { box-shadow: 0 0 0 9px transparent; } 100% { box-shadow: 0 0 0 0 transparent; } }
 
 .hero h1 {
-  margin: 0; font: 800 clamp(2.6rem, 7.4vw, 5.4rem)/1.02 var(--display); letter-spacing: -0.03em;
+  margin: 0; font: 800 clamp(2.3rem, 6.2vw, 4.6rem)/1.04 var(--display); letter-spacing: -0.03em;
 }
 .hero h1 .grad { padding-right: 0.04em; }
-.rotator { margin: 26px 0 0; max-width: 560px; font-size: clamp(1.05rem, 2.2vw, 1.24rem); line-height: 1.6; color: var(--text-2); }
+.rotator { margin: 26px 0 0; max-width: 600px; font-size: clamp(1.05rem, 2.2vw, 1.24rem); line-height: 1.6; color: var(--text-2); }
 .rotate { display: inline-flex; align-items: baseline; }
 .rotate-word {
   font-weight: 700; color: var(--text); background: var(--accent-soft); border-radius: 8px; padding: 0 6px;
