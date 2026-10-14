@@ -596,3 +596,4 @@ svg.fill { fill: currentColor; stroke: none; }
   .service.lead, .service.serve { grid-template-columns: minmax(0, 1fr); }
   .service.lead .svc:first-child { grid-column: auto; }
 }
+.stat-lead { background: radial-gradient(260px 140px at 0% 0%, var(--accent-soft), transparent 75%); }
