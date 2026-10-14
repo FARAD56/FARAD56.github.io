@@ -710,3 +710,23 @@ a.float:hover { border-color: var(--accent-line); }
   .step-link { width: 2px; height: 28px; margin: 4px auto; justify-self: center; background: linear-gradient(var(--a1), var(--a2)); }
   .step-link::after { right: auto; left: -5px; top: auto; bottom: -3px; border: 6px solid transparent; border-top: 8px solid var(--a2); border-bottom: 0; }
 }
+
+/* Project links */
+.p-stack { color: var(--muted); font: 500 0.78rem/1 var(--mono); }
+.p-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 18px; }
+.p-btn {
+  display: inline-flex; align-items: center; gap: 7px; height: 38px; padding: 0 14px; border-radius: 11px;
+  border: 1px solid var(--border-strong); background: var(--surface-2); color: var(--text);
+  font-weight: 600; font-size: 0.88rem; transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
+}
+.p-btn:hover { transform: translateY(-1px); border-color: var(--accent-line); }
+.p-btn svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.p-btn svg.fill { fill: currentColor; stroke: none; }
+.p-btn-main { background: var(--grad); color: #fff; border-color: transparent; box-shadow: 0 10px 22px -12px var(--glow-1); }
+.p-btn-main svg { fill: none; }
+.p-btn-main:hover { border-color: transparent; box-shadow: 0 14px 28px -12px var(--glow-1); }
+:root[data-theme="dark"] .p-btn-main { color: #07080c; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .p-btn-main { color: #07080c; } }
+.p-btn-muted { color: var(--muted); background: transparent; border-style: dashed; cursor: default; }
+.p-btn-muted:hover { transform: none; border-color: var(--border-strong); }
+.p-body { display: flex; flex-direction: column; }
