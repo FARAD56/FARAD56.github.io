@@ -597,3 +597,12 @@ svg.fill { fill: currentColor; stroke: none; }
   .service.lead .svc:first-child { grid-column: auto; }
 }
 .stat-lead { background: radial-gradient(260px 140px at 0% 0%, var(--accent-soft), transparent 75%); }
+.f2 { top: 60%; }
+@media (max-width: 640px) {
+  .f2 { top: 62%; right: -10%; }
+  .f2 b { font-size: 0.82rem; }
+}
+@media (max-width: 640px) {
+  .f2 { top: 55%; }
+  .f3 { bottom: 2%; }
+}
