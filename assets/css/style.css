@@ -389,8 +389,20 @@ svg.fill { fill: currentColor; stroke: none; }
 .edu-stats strong { display: block; font: 800 1.7rem/1 var(--display); letter-spacing: -0.03em; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .edu-stats span { color: var(--muted); font-size: 0.84rem; }
 .mini-list { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 10px; }
-.mini-list li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; padding: 14px 18px; border-radius: 16px; border: 1px solid var(--border); background: var(--surface); color: var(--text-2); font-size: 0.95rem; }
-.mini-list time { margin-left: auto; color: var(--muted); font: 500 0.8rem/1 var(--mono); }
+.mini-list > li { padding: 18px 20px; border-radius: 18px; border: 1px solid var(--border); background: var(--surface); color: var(--text-2); font-size: 0.95rem; transition: border-color 0.2s; }
+.mini-list > li:hover { border-color: var(--accent-line); }
+.ml-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 8px; }
+.ml-org { color: var(--accent); font-weight: 600; }
+.ml-head time { margin-left: auto; color: var(--muted); font: 500 0.8rem/1 var(--mono); }
+.mini-list p { margin: 8px 0 0; font-size: 0.93rem; }
+.ml-tags { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0 0; padding: 0; }
+.ml-tags li { padding: 4px 10px; border-radius: 999px; font-size: 0.78rem; font-weight: 500; color: var(--accent); background: var(--accent-soft); border: 1px solid var(--accent-line); }
+.ml-stat { display: flex; align-items: center; gap: 12px; margin-top: 12px; padding: 10px 14px; border-radius: 14px; background: var(--surface-2); border: 1px solid var(--border); }
+.ml-stat strong { font: 800 1.5rem/1 var(--display); letter-spacing: -0.03em; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; flex: none; }
+.ml-stat span { font-size: 0.85rem; color: var(--muted); line-height: 1.4; }
+.ml-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.ml-links a { display: inline-flex; gap: 6px; padding: 6px 12px; border-radius: 999px; font-size: 0.84rem; font-weight: 600; color: var(--text); border: 1px solid var(--border-strong); background: var(--surface); transition: border-color 0.15s, transform 0.15s; }
+.ml-links a:hover { border-color: var(--accent-line); transform: translateY(-1px); }
 .awards { list-style: none; margin: 0; padding: 6px; border-radius: 22px; border: 1px solid var(--border); background: var(--surface); }
 .awards li { display: grid; grid-template-columns: 32px minmax(0, 1fr) auto; gap: 12px; align-items: start; padding: 12px 14px; border-radius: 14px; color: var(--text-2); font-size: 0.95rem; transition: background 0.15s; }
 .awards li:hover { background: var(--accent-soft); }
@@ -541,3 +553,21 @@ svg.fill { fill: currentColor; stroke: none; }
   :root:not([data-theme="light"]) .play { background: #07080c; color: var(--a1); }
   :root:not([data-theme="light"]) .play::after { border-color: rgba(7, 8, 12, 0.5); }
 }
+
+/* Thesis highlight */
+.thesis {
+  position: relative; margin-top: 16px; padding: 18px 18px 18px 22px; border-radius: 16px;
+  background: linear-gradient(135deg, var(--accent-soft), transparent 75%), var(--surface-2);
+  border: 1px solid var(--accent-line); overflow: hidden;
+}
+.thesis::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--grad); }
+.thesis-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.thesis-years { color: var(--muted); font: 500 0.78rem/1 var(--mono); }
+.thesis h4 { margin: 12px 0 0; font: 700 1.12rem/1.3 var(--display); letter-spacing: -0.015em; color: var(--text); }
+.edu-card .thesis p { margin: 8px 0 0; font-size: 0.92rem; color: var(--text-2); }
+.thesis-awards { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0 0; padding: 0; }
+.thesis-awards li {
+  display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px; border-radius: 999px;
+  font-size: 0.78rem; font-weight: 600; color: var(--text); background: var(--surface); border: 1px solid var(--border-strong);
+}
+.thesis .arrow-link { margin-top: 12px; font-size: 0.92rem; }
