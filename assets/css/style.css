@@ -733,3 +733,16 @@ a.float:hover { border-color: var(--accent-line); }
   .rs-dl div { grid-template-columns: minmax(0, 1fr); gap: 2px; }
   .rs-item { padding: 18px 18px 18px 22px; }
 }
+
+/* Education layout: two balanced rows */
+.edu { align-items: stretch; }
+.edu-left, .edu-right { display: flex; flex-direction: column; }
+.edu-left .edu-card, .edu-right .awards { flex: 1; }
+.programs { margin-top: 26px; }
+.programs-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 0; align-items: stretch; }
+.programs-grid > li { display: flex; flex-direction: column; }
+@media (max-width: 960px) { .programs-grid { grid-template-columns: minmax(0, 1fr); } }
+@media (min-width: 961px) { .programs-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr); } }
+.ml-stat .ml-links { margin: 0 0 0 auto; flex: none; }
+.ml-stat span { min-width: 0; }
+@media (max-width: 560px) { .ml-stat { flex-wrap: wrap; } .ml-stat .ml-links { margin-left: 0; } }
