@@ -746,3 +746,6 @@ a.float:hover { border-color: var(--accent-line); }
 .ml-stat .ml-links { margin: 0 0 0 auto; flex: none; }
 .ml-stat span { min-width: 0; }
 @media (max-width: 560px) { .ml-stat { flex-wrap: wrap; } .ml-stat .ml-links { margin-left: 0; } }
+.p-links-3 { display: inline-grid; grid-template-columns: auto auto; justify-content: start; }
+.p-links-3 .p-btn { justify-content: center; }
+.p-btn-demo { grid-column: 1 / -1; }
