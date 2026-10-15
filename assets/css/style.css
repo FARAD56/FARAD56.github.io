@@ -749,3 +749,6 @@ a.float:hover { border-color: var(--accent-line); }
 .p-links-3 { display: inline-grid; grid-template-columns: auto auto; justify-content: start; }
 .p-links-3 .p-btn { justify-content: center; }
 .p-btn-demo { grid-column: 1 / -1; }
+.projects .p-links { display: grid; grid-template-columns: minmax(max-content, 1fr) minmax(max-content, 1fr); width: 100%; }
+.projects .p-links .p-btn { white-space: nowrap; padding: 0 12px; }
+.projects .p-links .p-btn { justify-content: center; }
